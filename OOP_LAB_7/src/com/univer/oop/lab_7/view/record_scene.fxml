@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="176.0" prefWidth="347.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.univer.oop.lab_7.controller.RecordController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="132.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="536.0" minWidth="10.0" prefWidth="214.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="144.0" minHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="319.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="340.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="340.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Label text="Тип іграшки: " />
+      <TextField fx:id="nameText" GridPane.columnIndex="1" />
+      <Label text="Ціна" GridPane.rowIndex="1" />
+      <TextField fx:id="priceText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Кількість:" GridPane.rowIndex="2" />
+      <TextField fx:id="amountText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Вікові обмеження:" GridPane.rowIndex="3" />
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <children>
+            <TextField fx:id="startText" prefHeight="25.0" prefWidth="93.0" />
+            <Label text=" до " />
+            <TextField fx:id="endText" prefHeight="25.0" prefWidth="100.0" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="7.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="214.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <Button fx:id="executeButton" mnemonicParsing="false" onAction="#execute" text="OK" />
+            <Button mnemonicParsing="false" onAction="#cancel" text="Відмінити" />
+         </children>
+      </HBox>
+   </children>
+</GridPane>
