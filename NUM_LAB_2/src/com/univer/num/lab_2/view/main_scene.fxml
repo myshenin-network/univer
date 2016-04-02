@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.univer.num.lab_2.controller.MainController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="Файл">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#create" text="Створити">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#open" text="Відкрити..">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#save" text="Зберігти..">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#quit" text="Вийти">
+                     <accelerator>
+                        <KeyCodeCombination alt="ANY" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Довідка">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#info" text="Про програму">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F1" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TabPane fx:id="mainPane" prefHeight="743.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Аналітичний запис">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane fx:id="analiticTool" prefHeight="714.0" prefWidth="569.0">
+                           <children>
+                              <HBox layoutX="135.0" layoutY="10.0" />
+                              <Label layoutX="14.0" layoutY="18.0" text="Початок: " />
+                              <TextField fx:id="beginFormula" layoutX="84.0" layoutY="14.0" />
+                              <Label layoutX="14.0" layoutY="67.0" text="Кінець:" />
+                              <TextField fx:id="endFormula" layoutX="84.0" layoutY="63.0" />
+                              <Label layoutX="14.0" layoutY="107.0" text="Функція на проміжку:" />
+                              <TextField fx:id="expressionFormula" layoutX="14.0" layoutY="135.0" prefHeight="25.0" prefWidth="463.0" />
+                              <Button layoutX="15.0" layoutY="180.0" mnemonicParsing="false" onAction="#addFormula" text="Додати" />
+                              <Button layoutX="113.0" layoutY="180.0" mnemonicParsing="false" onAction="#updateFormula" text="Змінити" />
+                              <Button layoutX="212.0" layoutY="180.0" mnemonicParsing="false" onAction="#deleteFormula" text="Видалити" />
+                              <Button layoutX="16.0" layoutY="232.0" mnemonicParsing="false" text="Оцінити похибку" />
+                              <Button layoutX="159.0" layoutY="232.0" mnemonicParsing="false" onAction="#buildPlot" text="Побудувати графік" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="analiticTable" prefHeight="714.0" prefWidth="456.0">
+                          <columns>
+                            <TableColumn fx:id="beginColumn" prefWidth="75.0" text="Початок" />
+                            <TableColumn fx:id="endColumn" prefWidth="75.0" text="Кінець" />
+                              <TableColumn fx:id="expressionColumn" prefWidth="305.0" text="Функція" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+          <Tab text="Вузли інтерполяції">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane fx:id="nodeTool" prefHeight="714.0" prefWidth="512.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Координати по осі Ох:" />
+                              <TextField layoutX="149.0" layoutY="10.0" fx:id="xPoint" />
+                              <Label layoutX="14.0" layoutY="57.0" text="Координати по осі Оу:" />
+                              <TextField fx:id="yPoint" layoutX="149.0" layoutY="53.0" />
+                              <Button layoutX="230.0" layoutY="97.0" mnemonicParsing="false" onAction="#deletePoint" text="Видалити" />
+                              <Button layoutX="119.0" layoutY="97.0" mnemonicParsing="false" onAction="#updatePoint" text="Змінити" />
+                              <Button layoutX="14.0" layoutY="97.0" mnemonicParsing="false" onAction="#addPoint" text="Додати" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="nodeTable" prefHeight="714.0" prefWidth="644.0">
+                          <columns>
+                            <TableColumn prefWidth="294.0" text="X" fx:id="xColumn" />
+                            <TableColumn fx:id="yColumn" minWidth="0.0" prefWidth="283.0" text="Y" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </HBox>
+               </content>
+          </Tab>
+            <Tab text="Графік">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="chart" prefHeight="714.0" prefWidth="801.0">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+            <Tab onSelectionChanged="#saveXML" text="Редагування файлу">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <TextArea onKeyTyped="#changed" prefHeight="200.0" prefWidth="200.0" fx:id="xmlEditor" />
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <HBox fx:id="statusBar" alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" style="-fx-border-width: 0.5; -fx-border-color: #aaaaaa;">
+         <children>
+            <Label fx:id="statusBarLabel" text="Untitled.xml" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

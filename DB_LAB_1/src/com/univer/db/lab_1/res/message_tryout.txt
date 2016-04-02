@@ -1,0 +1,9 @@
+41 insert 41;CHANGE;150;09-03-2016/07:44;pushkin;RGB;3000;2.1;0.7;Sony
+1 insert 41;CHANGE;150;09-03-2016/07:44;pushkin;RGB;3000;2.1;0.7;Sony
+118 insert 118;D:\images\fourth.jpg;4;09-03-2016/08:45;myshenin;BLACKWHITE;1000;1.4;0.12;Canon9
+21 update 21;CHANGE;52;09-03-2016/07:36;myshenin;RGB;2500;2.7;2.0;Sony
+61 update 21;CHANGE;52;09-03-2016/07:36;myshenin;RGB;2500;2.7;2.0;Sony
+118 update 118;D:\images\fifth.jpg;5;09-03-2016/08:46;myshenin;GREY;1000;1.4;0.02;Nikon10
+40 delete
+101 delete
+118 delete

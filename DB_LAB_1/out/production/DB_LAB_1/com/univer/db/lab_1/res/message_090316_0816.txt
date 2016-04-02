@@ -1,0 +1,10 @@
+18 delete
+21 update 21;CHANGE;52;09-03-2016/07:36;myshenin;RGB;2500;2.7;2.0;Sony
+22 update 22;CHANGE;28;09-03-2016/07:40;pushlin;RGB;1500;2.4;0.5;Sony
+23 update 23;CHANGE;52;09-03-2016/07:36;myshenin;RGB;2500;2.7;2.0;Sony
+26 delete
+28 delete
+39 update 39;CHANGE;64;09-03-2016/07:35;myshenin;RGB;2000;1.3;0.2;Nikon
+40 delete
+41 insert 41;CHANGE;150;09-03-2016/07:44;pushkin;RGB;3000;2.1;0.7;Sony
+51 insert 51;CHANGE;52;09-03-2016/07:36;myshenin;RGB;2500;2.7;2.0;Sony
